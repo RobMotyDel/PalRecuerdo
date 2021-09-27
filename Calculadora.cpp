@@ -10,48 +10,48 @@ using namespace std;
 
 int main() {
     //variables
-    float num1{0}, num2{0}, sum, res, mul;
-    float div;
+    float num1{0}, num2{0}, resultado;
     int mod, a, b;
     char oper{1};
 
     //Inicio de Programa
 
-    cout << "Calculadora basica" << endl;
-    cout << "Inserta un numero" << endl;
+    cout << "Este programa hace operaciones basicas entre dos numeros." << endl;
+    cout << "Primer numero: " << endl;
     cin >> num1;
-    cout << "Inserta un nuevo numero" << endl;
-    cin >> num2;
-    cout
-            << "Determine la operacion usando + (para suma), - (para resta), * (para multiplicacion), / (para division), % (para modulo "
-            << endl;
+    cout<< "Operacion: " << endl;
     cin >> oper;
+    cout << "Segundo numero: " << endl;
+    cin >> num2;
+
     //Definicion de resultados dependiendo del operador
     if (oper == '+') {
-        sum = num1 + num2;
-        cout << "La suma es:" << num1 << oper << num2 << "=" << sum << endl;
+        resultado = num1 + num2;
+        cout << "Resultado: " << num1 << " + " << num2 << " = " << resultado << endl;
     }
     if (oper == '-') {
-        res = num1 - num2;
-        cout << "La resta es:" << num1 << oper << num2 << "=" << res << endl;
+        resultado = num1 - num2;
+        cout << "Resultado: " << num1 << " - " << num2 << " = " << resultado << endl;
     }
     if (oper == '/') {
-        div = num1 / num2;
-        cout << "La division es:" << num1 << oper << num2 << "=" << div << endl;
+        if (num2 == 0){
+            cout << "Esta operacion no esta definida" << endl;
+            return 0;
+        }
+        resultado = num1 / num2;
+        cout << "Resultado: " << num1 << " / " << num2 << " = " << resultado << endl;
     }
     if (oper == '*') {
-        mul = num1 * num2;
-        cout << "La multiplicacion es:" << num1 << oper << num2 << "=" << mul << endl;
+        resultado = num1 * num2;
+        cout << "Resultado: " << num1 << " * " << num2 << " = " << resultado << endl;
     }
     if (oper == '%') {
-        a = num1;
-        b = num2;
+        int a = static_cast<int>(num1);
+        int b = static_cast<int>(num2);
         mod = a % b;
-        cout << "El modulo es:" << a << oper << b << "=" << mod << endl;
+        cout << "Resultado: " << a << " % " << b << " = " << mod << endl;
 
     }
-    //Comentario añadido para que el usuario reinicie el programa si quiere volver a hacer otra operación
-    cout << "Fin de calculo, reiniciar programa para comenzar uno nuevo" << endl;
 
     return 0;
 }

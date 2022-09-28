@@ -17,40 +17,49 @@ int main() {
     //Inicio de Programa
 
     cout << "Este programa hace operaciones basicas entre dos numeros." << endl;
-    cout << "Primer numero: " << endl;
+    cout << "Primer numero:";
     cin >> num1;
-    cout<< "Operacion: " << endl;
+    cout<< "Operacion:";
     cin >> oper;
-    cout << "Segundo numero: " << endl;
+    cout << "Segundo numero:";
     cin >> num2;
 
     //Definicion de resultados dependiendo del operador
     if (oper == '+') {
         resultado = num1 + num2;
-        cout << "Resultado: " << num1 << " + " << num2 << " = " << resultado << endl;
+        cout << "\nResultado: " << num1 << " + " << num2 << " = " << resultado << endl;
     }
+    //Analiza la operacion de - (resta)
     if (oper == '-') {
         resultado = num1 - num2;
-        cout << "Resultado: " << num1 << " - " << num2 << " = " << resultado << endl;
+        cout << "\nResultado: " << num1 << " - " << num2 << " = " << resultado << endl;
     }
+    //Analiza la operacion de / (division) y evita que se divida entre 0
     if (oper == '/') {
         if (num2 == 0){
-            cout << "Esta operacion no esta definida" << endl;
+            cout << "\nEsta operacion no se puede llevar a cabo, intenta no dividir entre 0" << endl;
             return 0;
         }
-        resultado = num1 / num2;
-        cout << "Resultado: " << num1 << " / " << num2 << " = " << resultado << endl;
+        else {
+            resultado = num1 / num2;
+            cout << "\nResultado: " << num1 << " / " << num2 << " = " << resultado << endl;
+        }
     }
+    //Analiza la operacion de * (multiplicación)
     if (oper == '*') {
         resultado = num1 * num2;
-        cout << "Resultado: " << num1 << " * " << num2 << " = " << resultado << endl;
+        cout << "\nResultado: " << num1 << " * " << num2 << " = " << resultado << endl;
     }
+    //Analiza la operacion de % (modulo) y convierte números flotantes en enteros
     if (oper == '%') {
-        int a = static_cast<int>(num1);
+        int a = static_cast<int>(num1);//Forma de convertir un flotante en un entero, se redondea para abajo
         int b = static_cast<int>(num2);
         mod = a % b;
-        cout << "Resultado: " << a << " % " << b << " = " << mod << endl;
+        cout << "\nResultado: " << a << " % " << b << " = " << mod << endl;
+    }
 
+    if (oper != ('+' && '-' && '*' && '/' && '%')){
+        cout << "\nEsta operacion es invalida, trata de usar +, -, *, /, y % e intentalo de nuevo" << endl;
     }
 
     return 0;

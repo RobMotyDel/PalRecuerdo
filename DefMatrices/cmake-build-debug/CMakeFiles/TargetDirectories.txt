@@ -1,0 +1,3 @@
+C:/Users/V303_14/Documents/CLion/Ejercicios/DefMatrices/cmake-build-debug/CMakeFiles/DefMatrices.dir
+C:/Users/V303_14/Documents/CLion/Ejercicios/DefMatrices/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/V303_14/Documents/CLion/Ejercicios/DefMatrices/cmake-build-debug/CMakeFiles/rebuild_cache.dir
